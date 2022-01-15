@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'base'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'https://papermc.io/repo/repository/maven-public/'
+    }
+    maven {
+        url 'https://repo.aikar.co/content/groups/aikar/'
+    }
+    maven {
+        url 'https://repo.codemc.org/repository/maven-public/'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+    flatDir {
+        dirs 'C:\\Users\\Aaron\\Desktop\\builds\\Idea\\Minecraft'
+    }
+}
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 1, 'seconds'
+    resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
+}
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+dependencies {
+    compileOnly 'apple.voltskiya.utilities:VoltskiyaUtilities:1.1.BUILD-SNAPSHOT'
+    compileOnly 'apple.voltskiya.mob_manager:VoltskiyaMobManager:v1.0'
+    compileOnly 'apple.nms.decoding:DecodingNms:1.1.BUILD-SNAPSHOT'
+    compileOnly 'apple.libraries:AppleUtilityLibraries:v1.1'
+    compileOnly 'apple.configs:AppleConfigs:v1.1'
+
+    compileOnly 'org.jetbrains:annotations:22.0.0'
+    compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
+    // The full Spigot server with no shadowing. Requires mavenLocal.
+    compileOnly 'org.spigotmc:spigot:1.18.1-R0.1-SNAPSHOT'
+
+    compileOnly 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
+    compileOnly 'net.luckperms:api:5.3'
+}
+
+jar {
+    destinationDirectory = new File('C:\\Users\\Aaron\\Desktop\\server\\plugins\\')
+}
+

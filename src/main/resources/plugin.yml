@@ -1,0 +1,6 @@
+name: DreamXplorer
+version: 1.0
+main: voltskiya.apple.dream.VoltskiyaPlugin
+api-version: 1.18
+authors: [ appleptr16 ]
+softdepend: [ LuckPerms, LoadDependencies, DecodingNms ]
